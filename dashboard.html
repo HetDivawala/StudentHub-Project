@@ -90,7 +90,6 @@ nav a:hover{
 }
 
 .cards{
-
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
@@ -98,7 +97,6 @@ nav a:hover{
 }
 
 .card{
-
     background:white;
     border-radius:12px;
     padding:25px;
@@ -108,9 +106,7 @@ nav a:hover{
 }
 
 .card:hover{
-
     transform:translateY(-8px);
-
 }
 
 .card h3{
@@ -124,7 +120,6 @@ nav a:hover{
 }
 
 .card a{
-
     text-decoration:none;
     background:#0d6efd;
     color:white;
@@ -136,7 +131,50 @@ nav a:hover{
     background:#084298;
 }
 
-/* FOOTER */
+/* FAQ */
+
+.faq{
+    width:90%;
+    margin:50px auto;
+}
+
+.faq h2{
+    text-align:center;
+    color:#0d6efd;
+    margin-bottom:20px;
+}
+
+.faq-item{
+    background:white;
+    margin-bottom:15px;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+.faq-question{
+    width:100%;
+    padding:15px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    outline:none;
+    text-align:left;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.faq-question:hover{
+    background:#084298;
+}
+
+.faq-answer{
+    display:none;
+    padding:15px;
+    background:#f8f9fa;
+    color:#555;
+    line-height:1.6;
+}
 
 footer{
     margin-top:50px;
@@ -155,7 +193,7 @@ footer{
 <header>
 
 <div class="logo">
-<img src="Logo.png">
+<img src="Logo.png" alt="Logo">
 <h1>Student Portal</h1>
 </div>
 
@@ -233,11 +271,78 @@ footer{
 
 </div>
 
+<!-- FAQ SECTION -->
+
+<section class="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+<button class="faq-question">1. How can I check my attendance?</button>
+<div class="faq-answer">
+<p>
+Go to the <b>Attendance</b> page from the navigation bar or dashboard and you can view your attendance percentage and records.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">2. How can I update my profile?</button>
+<div class="faq-answer">
+<p>
+Open <b>My Profile</b>, click on Edit Profile, update your details and save the changes.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">3. Where can I see my enrolled courses?</button>
+<div class="faq-answer">
+<p>
+Click on the <b>Courses</b> section from the dashboard to view all your enrolled subjects.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">4. How do I logout from the portal?</button>
+<div class="faq-answer">
+<p>
+Click on the <b>Logout</b> button available in the navigation menu to securely sign out.
+</p>
+</div>
+</div>
+
+</section>
+
 <footer>
 
 © 2026 Student Portal | All Rights Reserved
 
 </footer>
+
+<script>
+
+const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach(function(question){
+
+    question.addEventListener("click",function(){
+
+        const answer=this.nextElementSibling;
+
+        if(answer.style.display==="block"){
+            answer.style.display="none";
+        }
+        else{
+            answer.style.display="block";
+        }
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
